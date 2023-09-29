@@ -16,16 +16,16 @@ function getRectangleCorners (a, b, point) {
   }
   // then the top right
   const point2 = {
-    x: point1.x + a,
+    x: point1.x,
     y: point1.y + b
   }
   // then the top left
   const point3 = {
-    x: point1.x,
-    y: point2.y - b
+    x: point.x,
+    y: point2.y
   }
   // and return them as an array of points
-  return [point3, point2, point1, point]
+  return [point, point1, point2, point3]
 }
 
 module.exports = getRectangleCorners

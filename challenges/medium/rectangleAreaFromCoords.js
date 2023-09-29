@@ -7,8 +7,17 @@
 */
 
 function rectangleAreaFromCoords (points) {
-  [A,B,C,D] = points
-  return (A.x - B.x)*(C.y - D.y)
+  points.sort(function(a, b) {
+    return a.x - b.x;
+  });
+  const width = points[3].x - points[0].x;
+  
+  points.sort(function(a, b) {
+    return a.x - b.x;
+  });
+  const height = points[3].y - points[0].y;
+
+  return width * height;
 }
 
 module.exports = rectangleAreaFromCoords
